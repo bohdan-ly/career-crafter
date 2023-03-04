@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  header,
+  main {
+    padding: 0 20px;
+  }
+}
+
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  overflow: hidden;
+  height: 100%;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  /* ---- COLORS VARS ---- */
+  /* --primary-bg: white;
+  --primary-color: #213547;
+  --main-color: #dc9a00;
+  --additional-color: rgb(99 102 241);
+  --scrollbar-bg: rgba(0, 0, 0, 0.2); */
+
+  /* ---- COLORS ----- */
+  /* color-scheme: light dark;
+  color: var(--primary-color);
+  background-image: var(--primary-bg); */
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --primary-bg: #242424;
+    --primary-color: rgba(255, 255, 255, 0.87);
+    --scrollbar-bg: #dc9a00;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+} */

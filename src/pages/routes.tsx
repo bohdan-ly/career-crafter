@@ -3,10 +3,7 @@ import { Navigate, useRoutes } from "react-router-dom";
 
 import { PATHS } from "shared/navigation";
 
-// import MainPage from "pages/main";
-
-// import { AccessDeniedPage } from "./access-denied";
-// import { ServerErrorPage } from "./server-error";
+import WelcomePage from "pages/welcome";
 
 const lazyLoad = (loadedModule: () => Promise<{ default: React.FC }>) =>
   React.lazy(() =>
@@ -19,10 +16,8 @@ const lazyLoad = (loadedModule: () => Promise<{ default: React.FC }>) =>
     })
   );
 
-const MainPage = lazyLoad(() => import("./main"));
-const RecipePage = lazyLoad(() => import("./recipe"));
-const FridgePage = lazyLoad(() => import("./fridge"));
-const ShopPage = lazyLoad(() => import("./shop"));
+const CategoriesPage = lazyLoad(() => import("./categories"));
+// const WelcomePage = lazyLoad(() => import("./home"));
 
 const routesMap = [
   {
@@ -31,20 +26,20 @@ const routesMap = [
   },
   {
     path: PATHS.main.root,
-    element: <MainPage />,
+    element: <WelcomePage />,
   },
   {
-    path: PATHS.main.recipe,
-    element: <RecipePage />,
+    path: PATHS.main.categories,
+    element: <CategoriesPage />,
   },
-  {
-    path: PATHS.main.fridge,
-    element: <FridgePage />,
-  },
-  {
-    path: PATHS.main.shop,
-    element: <ShopPage />,
-  },
+  // {
+  //   path: PATHS.main.fridge,
+  //   element: <FridgePage />,
+  // },
+  // {
+  //   path: PATHS.main.shop,
+  //   element: <ShopPage />,
+  // },
   {
     path: PATHS.error.accessDenied,
     // element: <AccessDeniedPage />,

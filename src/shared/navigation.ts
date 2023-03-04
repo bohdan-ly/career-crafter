@@ -11,10 +11,10 @@ export const navigateTo = (path: string): void =>
 export const PATHS = {
   root: "/",
   main: {
-    root: "/main",
-    fridge: "/fridge",
-    shop: "/shop",
-    recipe: "/recipe/:recipeId",
+    root: "/home",
+    categories: "/categories",
+    project: "/project/:projectId",
+    profile: "/profile/:projectId",
   },
   error: {
     root: "/error",

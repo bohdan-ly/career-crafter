@@ -4,6 +4,7 @@ import recipes from "store/recipes/slice";
 import products from "store/products/slice";
 import filter from "store/filter/slice";
 import fridge from "store/fridge/slice";
+import user from "store/user/slice";
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     products,
     filter,
     fridge,
+    user,
   },
 });
 
