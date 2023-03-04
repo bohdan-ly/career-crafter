@@ -12,6 +12,25 @@
   main {
     padding: 0 20px;
   }
+
+  .list-checkmark {
+    li {
+      &::marker {
+        content: url("assets/checkmark.svg");
+      }
+    }
+  }
+
+  svg {
+    fill: #222222;
+    stroke: #222222;
+
+    path,
+    circle {
+      fill: inherit !important;
+      stroke: inherit !important;
+    }
+  }
 }
 
 :root {

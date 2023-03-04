@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useMediaLayout } from "shared/hooks/mobile";
 import { Busked, Menu, Search } from "shared/icons";
+import { CCAvatar } from "shared/ui";
 
 export const UserHeader = () => {
   const navigate = useNavigate();
@@ -86,11 +87,7 @@ export const UserHeader = () => {
           </div>
 
           <div className="order-3 flex items-center" id="nav-content">
-            <img
-              className="w-10 h-10 p-[1px] rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
-              src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-              alt="user avatar"
-            />
+            <CCAvatar />
           </div>
         </div>
       </nav>
