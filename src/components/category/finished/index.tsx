@@ -8,9 +8,9 @@ import { FinishedCard } from "./card";
 
 export const FinishedProjects = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col pt-5">
       <FinishedCard />
-      <div className="flex items-center mt-2 justify-between">
+      <div className="flex items-center mt-4 justify-between">
         <div>
           <CCButton title="Review" className="py-1 px-8" />
         </div>

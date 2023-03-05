@@ -9,14 +9,9 @@ type Props = {
 export const CCAvatar: React.FC<Props> = ({ src, className }) => {
   return (
     <img
-      className={classNames(
-        "p-[1px] rounded-full ring-2 ring-gray-300 dark:ring-gray-500",
-        className,
-        {
-          "w-10": !className,
-          "h-10": !className,
-        }
-      )}
+      className={classNames("rounded-full", className, {
+        "w-10 h-10 p-[1px] ring-2 ring-gray-300": !className,
+      })}
       src={
         src || "https://flowbite.com/docs/images/people/profile-picture-5.jpg"
       }

@@ -4,11 +4,13 @@ export const Checkmark: React.FC<{
   width?: string;
   height?: string;
   fill?: string;
+  stroke?: string;
   className?: string;
-}> = ({ width, height, fill, className = "" }) => {
+}> = ({ width, height, fill, stroke, className = "" }) => {
   return (
     <svg
-      fill={fill || "none"}
+      fill={fill || "#222222"}
+      stroke={stroke || "#222222"}
       height={height || "24px"}
       width={width || "24px"}
       viewBox="0 0 24 24"

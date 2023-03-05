@@ -15,11 +15,10 @@ export const CCButton: React.FC<Props> = ({
   return (
     <button
       className={classNames(
-        "w-full font-semibold border border-gray-300 hover:border-gray-400 focus:ring focus:ring-gray-50 bg-transparent hover:bg-gray-100 transition ease-in-out duration-200",
+        "w-full font-semibold border border-gray-300 hover:border-gray-400 focus:ring focus:ring-gray-50 hover:bg-gray-100 transition ease-in-out duration-200",
         className,
         {
-          "py-4": !className,
-          "px-9": !className,
+          "py-4 px-9": !className,
           "rounded-xl": !className?.includes("rounded"),
         }
       )}

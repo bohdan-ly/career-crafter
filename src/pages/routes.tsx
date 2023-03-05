@@ -18,6 +18,8 @@ const lazyLoad = (loadedModule: () => Promise<{ default: React.FC }>) =>
 
 const CategoriesPage = lazyLoad(() => import("./categories"));
 const CategoryPage = lazyLoad(() => import("./category"));
+const ProjectPage = lazyLoad(() => import("./project"));
+const ProfilePage = lazyLoad(() => import("./profile"));
 // const WelcomePage = lazyLoad(() => import("./home"));
 
 const routesMap = [
@@ -34,8 +36,20 @@ const routesMap = [
     element: <CategoriesPage />,
   },
   {
-    path: PATHS.categories.root + "/:categoryId",
+    path: PATHS.categories.category,
     element: <CategoryPage />,
+  },
+  {
+    path: PATHS.categories.project,
+    element: <ProjectPage />,
+  },
+  {
+    path: PATHS.profile.root,
+    element: <ProfilePage />,
+  },
+  {
+    path: PATHS.profile.user,
+    element: <ProfilePage />,
   },
   {
     path: PATHS.error.accessDenied,

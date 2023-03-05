@@ -2,12 +2,32 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useMediaLayout } from "shared/hooks/mobile";
 import { Busked, Menu, Search } from "shared/icons";
-import { CCAvatar } from "shared/ui";
+import { PATHS } from "shared/navigation";
+import { CCAvatar, CCLink } from "shared/ui";
 
 export const UserHeader = () => {
   const navigate = useNavigate();
   const isMobile = useMediaLayout();
   const [isOpen, setIsOpen] = React.useState(false);
+  const [items, setItems] = React.useState([
+    {
+      title: "Profile",
+      href: PATHS.profile.root,
+    },
+    {
+      title: "Explore",
+      href: PATHS.root,
+    },
+    {
+      title: "Categories",
+      href: PATHS.categories.root,
+    },
+    {
+      title: "Create Project",
+      href: PATHS.root,
+    },
+  ]);
+
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -21,6 +41,15 @@ export const UserHeader = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleNavigate = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    path: string
+  ) => {
+    e.preventDefault();
+    navigate(path);
+    setIsOpen(false);
   };
 
   return (
@@ -45,30 +74,17 @@ export const UserHeader = () => {
           >
             <nav>
               <ul className="md:flex items-center justify-between text-base md:pt-0">
-                <li>
-                  <a
-                    href="/main"
-                    className="inline-block no-underline text-black hover:text-black hover:underline py-2 px-4 cursor-pointer"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      navigate("/main");
-                    }}
-                  >
-                    Find Recipe
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/fridge"
-                    className="inline-block text-black no-underline hover:text-black hover:underline py-2 px-4 cursor-pointer"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      navigate("/fridge");
-                    }}
-                  >
-                    My Fridge
-                  </a>
-                </li>
+                {items.map((item) => (
+                  <li>
+                    <CCLink
+                      href={item.href}
+                      className="w-full inline-block no-underline text-black hover:text-black hover:underline py-2 px-4 cursor-pointer"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.title}
+                    </CCLink>
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>

@@ -1,6 +1,12 @@
+import classNames from "classnames";
 import React from "react";
 
-export const CCInput = () => {
+type Props = {
+  className?: string;
+  placeholder?: string;
+};
+
+export const CCInput: React.FC<Props> = ({ className, placeholder }) => {
   return (
     <form>
       <label htmlFor="cc-input" className="mb-2 text-sm font-medium sr-only">
@@ -27,8 +33,11 @@ export const CCInput = () => {
         <input
           type="search"
           id="cc-input"
-          className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-          placeholder="Search Mockups, Logos..."
+          className={classNames(
+            "block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500",
+            className
+          )}
+          placeholder={placeholder || "Search Members, Projects..."}
         />
       </div>
     </form>

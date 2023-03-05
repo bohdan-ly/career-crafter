@@ -1,11 +1,15 @@
 import React from "react";
-import { CCButton } from "shared/ui";
+import { PATHS } from "shared/navigation";
+import { CCButton, CCLink } from "shared/ui";
 
 const CategoryCard = () => {
   return (
     <div className="relative group flex justify-center items-center h-full w-full">
       <div className="overflow-hidden shadow-lg transition duration-500 ease-in-out transform rounded-lg cursor-pointer m-auto">
-        <a href="#" className="w-full block h-full relative">
+        <CCLink
+          href={PATHS.categories.root + "/1"}
+          className="w-full block h-full relative"
+        >
           <div className="bg-white/60 w-full p-4 relative z-[1]">
             <p className="text-indigo-500 text-2xl font-medium">Front-end</p>
             <p className="text-gray-800 text-sm font-medium mb-2">
@@ -38,7 +42,7 @@ const CategoryCard = () => {
             src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"
             className="max-h-24 w-full object-cover absolute top-0 -z-1"
           />
-        </a>
+        </CCLink>
       </div>
     </div>
   );

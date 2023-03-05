@@ -12,11 +12,15 @@ export const PATHS = {
   root: "/",
   main: {
     root: "/home",
-    project: "/project/:projectId",
-    profile: "/profile/:projectId",
   },
   categories: {
     root: "/categories",
+    category: "/categories/:categoryId",
+    project: "/categories/:categoryId/:projectId",
+  },
+  profile: {
+    root: "/profile",
+    user: "/profile/:userId",
   },
   error: {
     root: "/error",
