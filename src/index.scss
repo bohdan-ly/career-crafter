@@ -10,7 +10,7 @@
 
   header,
   main {
-    padding: 0 20px;
+    padding: 0 15%;
   }
 
   .list-checkmark {
@@ -30,6 +30,13 @@
       stroke: inherit;
       fill: inherit;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  header,
+  main {
+    padding: 0 20px;
   }
 }
 

@@ -22,22 +22,6 @@ export const InvestorsCrawl: React.FC<Props> = ({ className }) => {
     cssEase: "linear",
     // variableWidth: true,
     slidesPerRow: 1,
-    responsive: [
-      {
-        breakpoint: 576,
-        settings: {
-          slidesPerRow: 1,
-          rows: 1,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesPerRow: 2,
-          rows: 1,
-        },
-      },
-    ],
   };
 
   return (

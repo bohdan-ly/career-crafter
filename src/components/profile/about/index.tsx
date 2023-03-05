@@ -1,10 +1,11 @@
-import { EmailIcon, Github, LinkIcon, ProjectIcon } from "shared/icons";
+import { EditIcon, EmailIcon, ProjectIcon } from "shared/icons";
 
 type Props = {};
 
 export const About: React.FC<Props> = () => {
   return (
-    <div className="overflow-hidden flex flex-col">
+    <div className="flex flex-col relative">
+      {/* <EditIcon className="absolute right-0 -top-5 w-5 h-5" /> */}
       <p className="mt-2">
         {`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua ipsum dolor sit amet,

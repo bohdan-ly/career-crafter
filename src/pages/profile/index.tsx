@@ -9,6 +9,7 @@ import {
 import {
   Owner,
   ProjectHeader,
+  ProjectPopup,
   Reviews,
   Skills,
   Team,
@@ -21,9 +22,23 @@ const ProfilePage: React.FC = () => {
   const { userId } = useParams();
   console.log(userId);
 
+  const getType = () => {
+    switch (userId) {
+      case "investor": {
+        return "investor";
+      }
+      case "recruiter": {
+        return "recruiter";
+      }
+      default: {
+        return "";
+      }
+    }
+  };
+
   return (
     <main className="w-full flex flex-col overflow-hidden pb-10">
-      <ProfileHeader />
+      <ProfileHeader type={getType()} />
 
       <Section
         title="About me"

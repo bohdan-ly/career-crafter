@@ -20,6 +20,7 @@ const CategoriesPage = lazyLoad(() => import("./categories"));
 const CategoryPage = lazyLoad(() => import("./category"));
 const ProjectPage = lazyLoad(() => import("./project"));
 const ProfilePage = lazyLoad(() => import("./profile"));
+const ExplorePage = lazyLoad(() => import("./explore"));
 // const WelcomePage = lazyLoad(() => import("./home"));
 
 const routesMap = [
@@ -50,6 +51,10 @@ const routesMap = [
   {
     path: PATHS.profile.user,
     element: <ProfilePage />,
+  },
+  {
+    path: PATHS.explore.root,
+    element: <ExplorePage />,
   },
   {
     path: PATHS.error.accessDenied,

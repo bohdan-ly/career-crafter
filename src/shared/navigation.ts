@@ -22,6 +22,9 @@ export const PATHS = {
     root: "/profile",
     user: "/profile/:userId",
   },
+  explore: {
+    root: "/explore",
+  },
   error: {
     root: "/error",
     accessDenied: "/error/401",

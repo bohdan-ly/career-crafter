@@ -1,22 +1,33 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "shared/hooks/global";
 import { useMediaLayout } from "shared/hooks/mobile";
 import { Busked, Menu, Search } from "shared/icons";
 import { PATHS } from "shared/navigation";
 import { CCAvatar, CCLink } from "shared/ui";
+import { openPopup } from "store/popup/slice";
+import { useOnClickOutside } from "usehooks-ts";
 
 export const UserHeader = () => {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
+
+  const route = useNavigate();
   const isMobile = useMediaLayout();
+  const menuRef = React.useRef(null);
   const [isOpen, setIsOpen] = React.useState(false);
   const [items, setItems] = React.useState([
+    {
+      title: "Home",
+      href: PATHS.root,
+    },
     {
       title: "Profile",
       href: PATHS.profile.root,
     },
     {
       title: "Explore",
-      href: PATHS.root,
+      href: PATHS.explore.root,
     },
     {
       title: "Categories",
@@ -24,12 +35,15 @@ export const UserHeader = () => {
     },
     {
       title: "Create Project",
-      href: PATHS.root,
+      // href: PATHS.root,
+      action: () => dispatch(openPopup(null)),
     },
   ]);
 
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
+  useOnClickOutside(menuRef, () => setIsOpen(false));
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAuth(event.target.checked);
@@ -43,17 +57,8 @@ export const UserHeader = () => {
     setAnchorEl(null);
   };
 
-  const handleNavigate = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    path: string
-  ) => {
-    e.preventDefault();
-    navigate(path);
-    setIsOpen(false);
-  };
-
   return (
-    <header className="sticky top-0 bg-white z-10">
+    <header className="sticky top-0 bg-white z-20">
       <nav>
         <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-3 md:px-6 py-3">
           <label
@@ -66,7 +71,8 @@ export const UserHeader = () => {
           <input className="hidden" type="checkbox" id="menu-toggle" />
 
           <div
-            className={`absolute left-0 top-16 z-10 m-5 w-[90%] md:h-full md:top-0 md:relative md:m-0 md:flex md:items-center md:w-auto shadow order-3 md:order-1 transform-all duration-500 rounded-lg mt-6 bg-white/[.90] md:bg-transparent ${
+            ref={menuRef}
+            className={`absolute py-4 left-0 top-16 z-10 m-5 w-[90%] md:h-full md:top-0 md:relative md:m-0 md:flex md:items-center md:w-auto shadow-lg md:shadow-none md:border-none border order-3 md:order-1 transform-all duration-500 rounded-lg mt-6 bg-white/[.98] md:bg-transparent ${
               isMobile &&
               (isOpen ? "translate-x-0 opacity-1" : "-translate-x-80 opacity-0")
             }`}
@@ -79,7 +85,10 @@ export const UserHeader = () => {
                     <CCLink
                       href={item.href}
                       className="w-full inline-block no-underline text-black hover:text-black hover:underline py-2 px-4 cursor-pointer"
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => {
+                        if (item.action) item.action();
+                        setIsOpen(false);
+                      }}
                     >
                       {item.title}
                     </CCLink>
@@ -89,21 +98,10 @@ export const UserHeader = () => {
             </nav>
           </div>
 
-          <div className="order-2">
-            <a
-              href="/main"
-              className="dark:text-white dark:hover:text-indigo-500 flex items-center tracking-wide no-underline hover:no-underline font-bold text-2xl cursor-pointer"
-              onClick={(e) => {
-                e.preventDefault();
-                navigate("/main");
-              }}
-            >
-              Coffee Pub
-            </a>
-          </div>
-
           <div className="order-3 flex items-center" id="nav-content">
-            <CCAvatar />
+            <CCLink href={PATHS.profile.root}>
+              <CCAvatar />
+            </CCLink>
           </div>
         </div>
       </nav>

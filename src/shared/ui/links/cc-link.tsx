@@ -11,7 +11,7 @@ type Props = {
 };
 
 export const CCLink: React.FC<Props> = ({
-  href = PATHS.root,
+  href,
   className,
   children = null,
   onClick = () => {},
@@ -22,7 +22,7 @@ export const CCLink: React.FC<Props> = ({
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
     e.preventDefault();
-    navigate(href);
+    if (href) navigate(href);
     onClick();
   };
   return (

@@ -4,6 +4,7 @@ export {
   MagnifyingGlassIcon as SearchIcon,
   FunnelIcon as FilterIcon,
   LinkIcon,
+  PlusIcon,
 } from "@heroicons/react/24/solid";
 
 export {
@@ -12,4 +13,6 @@ export {
   BookOpenIcon as OverviewIcon,
   TrashIcon as DeleteIcon,
   ArrowRightOnRectangleIcon as ExitIcon,
+  PencilIcon as EditIcon,
+  ChevronDownIcon as ArrowDown,
 } from "@heroicons/react/24/outline";
