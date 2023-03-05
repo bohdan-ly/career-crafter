@@ -18,9 +18,13 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Section } from "shared/ui";
 
+export const roles = {
+  investor: "investor",
+  recruiter: "recruiter",
+};
+
 const ProfilePage: React.FC = () => {
   const { userId } = useParams();
-  console.log(userId);
 
   const getType = () => {
     switch (userId) {
@@ -41,13 +45,19 @@ const ProfilePage: React.FC = () => {
       <ProfileHeader type={getType()} />
 
       <Section
-        title="About me"
-        content={<About />}
+        title={
+          userId === roles.investor
+            ? ""
+            : roles.recruiter === "recruiter"
+            ? "Looking for"
+            : "About me"
+        }
+        content={<About type={getType()} />}
         titleClassName="text-md font-bold font-heading md:max-w-xl leading-none"
         className="pt-5 px-4"
       />
-      <Actions />
-      <Tabs />
+      {!getType() && <Actions />}
+      <Tabs type={getType()} />
       <Administrations />
     </main>
   );

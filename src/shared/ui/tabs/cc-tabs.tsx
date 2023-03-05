@@ -33,7 +33,7 @@ export const CCTabs: React.FC<Props> = ({ className, tabs = null }) => {
               key={tab.title}
               onClick={() => setCurTabIdx(idx)}
               className={classNames(
-                "inline-flex p-4 border-b-2 rounded-t-lg md:hover:text-gray-600 md:hover:border-gray-300 group",
+                "inline-flex p-4 border-b-2 cursor-pointer rounded-t-lg md:hover:text-gray-600 md:hover:border-gray-300 group",
                 {
                   "border-transparent": idx !== curTabIdx,
                   "border-indigo-600 text-indigo-600": idx === curTabIdx,

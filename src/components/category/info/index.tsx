@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "shared/hooks/global";
 import { Checkmark } from "shared/icons";
-import { CCButton, CCInput } from "shared/ui";
+import { CCButton } from "shared/ui";
 import { selectFridgeProducts } from "store/fridge/selector";
 import { setRecipe } from "store/recipes/slice";
 

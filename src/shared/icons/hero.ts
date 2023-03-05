@@ -15,4 +15,6 @@ export {
   ArrowRightOnRectangleIcon as ExitIcon,
   PencilIcon as EditIcon,
   ChevronDownIcon as ArrowDown,
+  UserGroupIcon as GroupIcon,
+  BanknotesIcon,
 } from "@heroicons/react/24/outline";

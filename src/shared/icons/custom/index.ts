@@ -5,3 +5,5 @@ export { Busked } from "./busked";
 export { Checkmark } from "./checkmark";
 export { Star } from "./star";
 export { Github } from "./github";
+export { Behance } from "./behance";
+export { Help } from "./help";
