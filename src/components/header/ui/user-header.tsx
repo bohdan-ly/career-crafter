@@ -63,7 +63,7 @@ export const UserHeader = () => {
         <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-3 md:px-6 py-3">
           <label
             htmlFor="menu-toggle"
-            className="cursor-pointer order-1"
+            className="cursor-pointer order-1 md:hidden"
             onClick={() => setIsOpen(!isOpen)}
           >
             <Menu />
@@ -72,7 +72,7 @@ export const UserHeader = () => {
 
           <div
             ref={menuRef}
-            className={`absolute py-4 left-0 top-16 z-10 m-5 w-[90%] md:h-full md:top-0 md:relative md:m-0 md:flex md:items-center md:w-auto shadow-lg md:shadow-none md:border-none border order-3 md:order-1 transform-all duration-500 rounded-lg mt-6 bg-white/[.98] md:bg-transparent ${
+            className={`absolute md:-ml-5 py-4 left-0 top-16 z-10 m-5 w-[90%] md:h-full md:top-0 md:relative md:m-0 md:flex md:items-center md:w-auto shadow-lg md:shadow-none md:border-none border order-3 md:order-1 transform-all duration-500 rounded-lg mt-6 bg-white/[.98] md:bg-transparent ${
               isMobile &&
               (isOpen ? "translate-x-0 opacity-1" : "-translate-x-80 opacity-0")
             }`}

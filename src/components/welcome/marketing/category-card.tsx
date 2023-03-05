@@ -1,7 +1,12 @@
 import React from "react";
 import { CCButton } from "shared/ui";
 
-const CategoryCard = ({ title, desc, src, cta }) => {
+const CategoryCard: React.FC<{
+  title: string;
+  desc: string;
+  src: string;
+  cta: string;
+}> = ({ title, desc, src, cta }) => {
   console.log(src);
 
   return (
