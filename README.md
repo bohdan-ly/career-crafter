@@ -1,4 +1,4 @@
-# CareerCrafter Project
+# CareerCrafter
 
 ## Fully responsive and intuitive collaborative platform for developers, recruiters and investors!
 
