@@ -75,7 +75,7 @@ export const UserHeader = () => {
             <nav>
               <ul className="md:flex items-center justify-between text-base md:pt-0">
                 {items.map((item) => (
-                  <li>
+                  <li key={item.title}>
                     <CCLink
                       href={item.href}
                       className="w-full inline-block no-underline text-black hover:text-black hover:underline py-2 px-4 cursor-pointer"

@@ -1,6 +1,12 @@
 import { Investors, OngoingProjects } from "components/category";
 import {
   About,
+  Actions,
+  Administrations,
+  ProfileHeader,
+  Tabs,
+} from "components/profile";
+import {
   Owner,
   ProjectHeader,
   Reviews,
@@ -17,42 +23,17 @@ const ProfilePage: React.FC = () => {
 
   return (
     <main className="w-full flex flex-col overflow-hidden pb-10">
-      <Section
-        title="Film website"
-        titleClassName="text-4xl font-bold font-heading md:max-w-xl leading-none"
-        content={<ProjectHeader />}
-      />
+      <ProfileHeader />
 
       <Section
-        title="About project"
-        content={<About resource="github" link="/categories" about="" />}
+        title="About me"
+        content={<About />}
         titleClassName="text-md font-bold font-heading md:max-w-xl leading-none"
+        className="pt-5 px-4"
       />
-
-      <Section
-        title="Necessary skills"
-        content={<Skills />}
-        titleClassName="text-md font-bold font-heading md:max-w-xl leading-none"
-        className="px-4 pt-6"
-      />
-      <Section
-        title="Team"
-        content={<Team />}
-        titleClassName="text-md font-bold font-heading md:max-w-xl leading-none"
-        className="px-4 pt-5"
-      />
-      <Section
-        title="Owner"
-        content={<Owner />}
-        titleClassName="text-md font-bold font-heading md:max-w-xl leading-none"
-        className="px-4 pt-12"
-      />
-      <Section
-        title="Reviews"
-        content={<Reviews />}
-        titleClassName="text-md font-bold font-heading md:max-w-xl leading-none"
-        className="px-4 pt-12"
-      />
+      <Actions />
+      <Tabs />
+      <Administrations />
     </main>
   );
 };

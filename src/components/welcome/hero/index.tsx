@@ -38,7 +38,7 @@ export const Hero = () => {
                       <path
                         d="M8.66667 3.41675L12.75 7.50008M12.75 7.50008L8.66667 11.5834M12.75 7.50008L2.25 7.50008"
                         stroke="black"
-                        stroke-width="1.5"
+                        strokeWidth="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       ></path>
